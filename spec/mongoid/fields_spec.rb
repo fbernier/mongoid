@@ -685,7 +685,7 @@ describe Mongoid::Fields do
     context "when the field is a time" do
 
       let!(:time) do
-        Time.now
+        Time.now.change(:hour => 23, :min => 59, :sec => 59, :usec => 999999.999)
       end
 
       let!(:person) do
